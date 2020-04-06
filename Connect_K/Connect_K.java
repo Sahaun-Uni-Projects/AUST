@@ -36,7 +36,7 @@ class Util {
     }
     
     public static char to_hex(int n) {
-        return ((char) (n+ ((n < 10) ? '0' : ('A'-10))));
+        return ((char)(n + ((n < 10) ? '0' : ('A'-10))));
     }
     
     public static boolean is_between(int n, int a, int b) {
@@ -94,12 +94,11 @@ class Grid {
         Util.new_line(1);
         for (int r = Util.to_int(Macro.HIDE_CELL_NUMBER); r <= rows; ++r) {
             for (int c = Util.to_int(Macro.HIDE_CELL_NUMBER); c <= cols; ++c) {
-                System.out.print(grid[r][c]);
-                System.out.print(" ");
+                System.out.print(grid[r][c] + " ");
                 if (c == 0) System.out.print(" ");
             }
-            System.out.print("\n");
-            if (r == 0) System.out.print("\n");
+            Util.new_line(1);
+            if (r == 0) Util.new_line(1);
         }
     }
     
@@ -318,7 +317,7 @@ public class Connect_K {
         System.out.print("Select Player 1's character: ");
         char1 = sc.next().charAt(0);
         while (char1 == Macro.DEF_CHAR) {
-            System.out.println("Invalid action. Characters should be unique and not '" + Macro.DEF_CHAR + "'.");
+            System.out.println("Invalid token. Characters should be unique and not '" + Macro.DEF_CHAR + "'.");
             System.out.print("Select Player 1's character: ");
             char1 = sc.next().charAt(0);
         }
@@ -326,7 +325,7 @@ public class Connect_K {
         System.out.print("Select Player 2's character: ");
         char2 = sc.next().charAt(0);
         while ((char2 == char1) || (char2 == Macro.DEF_CHAR)) {
-            System.out.println("Invalid action. Characters should be unique and not '" + Macro.DEF_CHAR + "'.");
+            System.out.println("Invalid token. Characters should be unique and not '" + Macro.DEF_CHAR + "'.");
             System.out.print("Select Player 2's character: ");
             char2 = sc.next().charAt(0);
         }
